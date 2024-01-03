@@ -1,0 +1,14 @@
+C:\Users\Martin\source\repos\Online rezervacija hotela 2.0\Online rezervacija hotela 2.0\bin\Debug\Online rezervacija hotela 2.0.exe.config
+C:\Users\Martin\source\repos\Online rezervacija hotela 2.0\Online rezervacija hotela 2.0\bin\Debug\Online rezervacija hotela 2.0.exe
+C:\Users\Martin\source\repos\Online rezervacija hotela 2.0\Online rezervacija hotela 2.0\bin\Debug\Online rezervacija hotela 2.0.pdb
+C:\Users\Martin\source\repos\Online rezervacija hotela 2.0\Online rezervacija hotela 2.0\obj\Debug\Online rezervacija hotela 2.0.csproj.AssemblyReference.cache
+C:\Users\Martin\source\repos\Online rezervacija hotela 2.0\Online rezervacija hotela 2.0\obj\Debug\Online_rezervacija_hotela_2._0.Properties.Resources.resources
+C:\Users\Martin\source\repos\Online rezervacija hotela 2.0\Online rezervacija hotela 2.0\obj\Debug\Online rezervacija hotela 2.0.csproj.GenerateResource.cache
+C:\Users\Martin\source\repos\Online rezervacija hotela 2.0\Online rezervacija hotela 2.0\obj\Debug\Online rezervacija hotela 2.0.csproj.CoreCompileInputs.cache
+C:\Users\Martin\source\repos\Online rezervacija hotela 2.0\Online rezervacija hotela 2.0\obj\Debug\Online rezervacija hotela 2.0.exe
+C:\Users\Martin\source\repos\Online rezervacija hotela 2.0\Online rezervacija hotela 2.0\obj\Debug\Online rezervacija hotela 2.0.pdb
+C:\Users\Martin\source\repos\Online rezervacija hotela 2.0\Online rezervacija hotela 2.0\obj\Debug\Online_rezervacija_hotela_2._0.Rezervacija.resources
+C:\Users\Martin\source\repos\Online rezervacija hotela 2.0\Online rezervacija hotela 2.0\obj\Debug\Online_rezervacija_hotela_2._0.Soba.resources
+C:\Users\Martin\source\repos\Online rezervacija hotela 2.0\Online rezervacija hotela 2.0\obj\Debug\Online_rezervacija_hotela_2._0.Uredi.resources
+C:\Users\Martin\source\repos\Online rezervacija hotela 2.0\Online rezervacija hotela 2.0\obj\Debug\Online_rezervacija_hotela_2._0.GostUSobi.resources
+C:\Users\Martin\source\repos\Online rezervacija hotela 2.0\Online rezervacija hotela 2.0\obj\Debug\Online_rezervacija_hotela_2._0.SobeIGostUSobi.resources
