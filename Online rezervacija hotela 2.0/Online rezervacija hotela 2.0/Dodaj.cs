@@ -16,5 +16,13 @@ namespace Online_rezervacija_hotela_2._0
         {
             InitializeComponent();
         }
+
+        private void dodajbutton_Click(object sender, EventArgs e)
+        {
+            int BrojSobe=Convert.ToInt32(BrojSobeTextBox.Text);
+            string TipSobe = TipSobeTextBox.Text;
+            double CijenaNoci = Convert.ToDouble(CijenaNociTextbox.Text);
+            int VelicinaSobe
+        }
     }
 }
