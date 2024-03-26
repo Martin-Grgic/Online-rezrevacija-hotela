@@ -15,13 +15,13 @@ namespace Online_Rezervacija_hotela_MAIN
         private Soba soba;
 
         //Dodavanje constructora u klasu
-        public GostUSobi(string imeGosta, string prezimeGosta, string oibGosta, Soba soba)
+        /*public GostUSobi(string imeGosta, string prezimeGosta, string oibGosta, Soba soba)
         {
             this.Soba = soba;
             this.imeGosta = imeGosta;
             this.prezimeGosta = prezimeGosta;
             this.oibGosta = oibGosta;
-        }
+        }*/
 
         //Kreiranje javnih varijabli iz privatnih pomoću get i set
         public string ImeGosta { get { return imeGosta; } set { imeGosta = value; } }
