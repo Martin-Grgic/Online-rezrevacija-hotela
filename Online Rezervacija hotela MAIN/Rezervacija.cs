@@ -14,10 +14,10 @@ namespace Online_Rezervacija_hotela_MAIN
         private DateTime checkOut;
         private int brojGostiju;
         private int brojRezervacije;
-        private Soba soba;
+       
 
         //Dodavanje constructora
-        public Rezervacija(GostUSobi gost, DateTime checkIn, DateTime checkOut, int brojGostiju, int brojRezervacije, Soba soba)
+       /* public Rezervacija(GostUSobi gost, DateTime checkIn, DateTime checkOut, int brojGostiju, int brojRezervacije, Soba soba)
         {
             this.gost = gost;
             this.checkIn = checkIn;
@@ -25,7 +25,7 @@ namespace Online_Rezervacija_hotela_MAIN
             this.brojGostiju = brojGostiju;
             this.brojRezervacije = brojRezervacije;
             this.soba = soba;
-        }
+        }*/
 
         //kreiranje javnih varijabli pomoću get i set
         public GostUSobi Gost { get { return gost; } set { gost = value; } }
@@ -33,7 +33,7 @@ namespace Online_Rezervacija_hotela_MAIN
         public DateTime CheckOut { get { return checkOut; } set { checkOut = value; } }
         public int BrojGostiju { get { return brojGostiju; } set { brojGostiju = value; } }
         public int BrojRezervacije { get { return brojRezervacije; } set { brojRezervacije = value; } }
-        public Soba Soba { get { return soba; } set { soba = value; } }
+        
 
         //definiranje CompareTo i vraćanje rezultata
         public int CompareTo(object obj)
@@ -44,7 +44,7 @@ namespace Online_Rezervacija_hotela_MAIN
         }
 
         //Overrideanje ToStringa() da nam ispisuje željene atribute
-        public override string ToString() => this.Gost.ImeGosta + ' ' + this.checkIn.ToString() + ',' + this.Soba.BrojSobe;
+        public override string ToString() => this.Gost.ImeGosta + ' ' + this.checkIn.ToString() + ',' + this.Gost.Soba.BrojSobe;
 
 
     }

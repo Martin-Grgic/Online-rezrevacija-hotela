@@ -31,12 +31,12 @@
             this.ImeTB = new System.Windows.Forms.TextBox();
             this.PrezimeTB = new System.Windows.Forms.TextBox();
             this.OIBTB = new System.Windows.Forms.TextBox();
-            this.GostSobaTB = new System.Windows.Forms.TextBox();
             this.DodajGost = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // ImeTB
@@ -60,21 +60,15 @@
             this.OIBTB.Size = new System.Drawing.Size(149, 20);
             this.OIBTB.TabIndex = 2;
             // 
-            // GostSobaTB
-            // 
-            this.GostSobaTB.Location = new System.Drawing.Point(151, 305);
-            this.GostSobaTB.Name = "GostSobaTB";
-            this.GostSobaTB.Size = new System.Drawing.Size(149, 20);
-            this.GostSobaTB.TabIndex = 3;
-            // 
             // DodajGost
             // 
-            this.DodajGost.Location = new System.Drawing.Point(431, 181);
+            this.DodajGost.Location = new System.Drawing.Point(463, 97);
             this.DodajGost.Name = "DodajGost";
             this.DodajGost.Size = new System.Drawing.Size(148, 57);
             this.DodajGost.TabIndex = 4;
             this.DodajGost.Text = "Dodaj";
             this.DodajGost.UseVisualStyleBackColor = true;
+            this.DodajGost.Click += new System.EventHandler(this.DodajGost_Click);
             // 
             // label1
             // 
@@ -112,22 +106,32 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Soba";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(151, 288);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(176, 108);
+            this.listBox1.TabIndex = 9;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
             // Dodaj_Gost_U_Sobi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DodajGost);
-            this.Controls.Add(this.GostSobaTB);
             this.Controls.Add(this.OIBTB);
             this.Controls.Add(this.PrezimeTB);
             this.Controls.Add(this.ImeTB);
             this.Name = "Dodaj_Gost_U_Sobi";
             this.Text = "Dodaj_Gost_U_Sobi";
+            this.Load += new System.EventHandler(this.Dodaj_Gost_U_Sobi_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,11 +142,11 @@
         private System.Windows.Forms.TextBox ImeTB;
         private System.Windows.Forms.TextBox PrezimeTB;
         private System.Windows.Forms.TextBox OIBTB;
-        private System.Windows.Forms.TextBox GostSobaTB;
         private System.Windows.Forms.Button DodajGost;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

@@ -10,6 +10,7 @@ namespace Online_rezervacija_hotela_MAIN
     public partial class SobaForm : Form
     {
         bool up = true;
+        bool searched=false;
         PodatkovniKontekst kontekst;
         List<Soba> sobaPrikaz = new List<Soba>();
         public SobaForm()
@@ -29,7 +30,7 @@ namespace Online_rezervacija_hotela_MAIN
 
         private void UrediButton_Click(object sender, EventArgs e)
         {
-            new Uredi().Show();
+            new UrediSobu().Show();
         }
 
         private void RefreshSobe()
@@ -39,7 +40,7 @@ namespace Online_rezervacija_hotela_MAIN
 
             List<Soba> soba = this.kontekst.UcitajSobu();
 
-            if (sobaPrikaz.Count>0)
+            if (sobaPrikaz.Count>0 || searched)
             {
                 foreach (Soba s in sobaPrikaz)
                 {
@@ -131,12 +132,14 @@ namespace Online_rezervacija_hotela_MAIN
 
         private void SearchSoba_TextChanged(object sender, EventArgs e)
         {
+            searched=true;
             
             sobaPrikaz.Clear();
             List<Soba> sobaKomplet = this.kontekst.UcitajSobu();
 
             foreach (Soba s in sobaKomplet)
-                if(s.TipSobe.Contains(SearchSoba.Text.ToLower())) sobaPrikaz.Add(s);
+                if (s.TipSobe.Contains(SearchSoba.Text.ToLower())) sobaPrikaz.Add(s);
+                
 
             RefreshSobe() ;
         }
@@ -156,6 +159,27 @@ namespace Online_rezervacija_hotela_MAIN
             Sortiranje();
 
 
+        }
+
+        private void ListBoxSoba_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DeleteSoba.Visible = true;
+        }
+
+        private void DeleteSoba_Click(object sender, EventArgs e)
+        {
+            if(ListBoxSoba.SelectedIndex == -1) return;
+            else
+            {
+                Soba s = ListBoxSoba.SelectedItem as Soba;
+
+                kontekst.IzbrisiSobu(s);
+            }
+            sobaPrikaz.Clear();
+            searched = false;
+            RefreshSobe();
+            
+            
         }
     }
 }

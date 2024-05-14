@@ -88,11 +88,23 @@
     <Compile Include="SobeIGostUSobi.designer.cs">
       <DependentUpon>SobeIGostUSobi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Uredi.cs">
+    <Compile Include="UrediGosta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Uredi.designer.cs">
-      <DependentUpon>Uredi.cs</DependentUpon>
+    <Compile Include="UrediGosta.Designer.cs">
+      <DependentUpon>UrediGosta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UrediRezervaciju.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UrediRezervaciju.Designer.cs">
+      <DependentUpon>UrediRezervaciju.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UrediSobu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UrediSobu.designer.cs">
+      <DependentUpon>UrediSobu.cs</DependentUpon>
     </Compile>
     <Compile Include="GostUSobi.cs" />
     <Compile Include="PodatkovniKontekst.cs" />
@@ -121,8 +133,14 @@
     <EmbeddedResource Include="SobeIGostUSobi.resx">
       <DependentUpon>SobeIGostUSobi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Uredi.resx">
-      <DependentUpon>Uredi.cs</DependentUpon>
+    <EmbeddedResource Include="UrediGosta.resx">
+      <DependentUpon>UrediGosta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UrediRezervaciju.resx">
+      <DependentUpon>UrediRezervaciju.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UrediSobu.resx">
+      <DependentUpon>UrediSobu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

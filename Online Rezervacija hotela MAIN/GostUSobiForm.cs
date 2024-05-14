@@ -17,12 +17,13 @@ namespace Online_rezervacija_hotela_MAIN
         public GostUSobiForm()
         {
             InitializeComponent();
+
         }
 
         
         private void UrediButton_Click(object sender, EventArgs e)
         {
-            Uredi uredi = new Uredi();
+            UrediSobu uredi = new UrediSobu();
             uredi.Show();
         }
 

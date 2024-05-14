@@ -23,6 +23,7 @@ namespace Online_rezervacija_hotela_MAIN
 
         private void DodajSoba_Click(object sender, EventArgs e)
         {
+            
             this.soba = new Soba(int.Parse(this.BrojSobeTB.Text), this.TipSobeTB.Text, 
                 double.Parse(this.CijenaNociTB.Text), double.Parse(this.VelicinaSobeTB.Text));
 
