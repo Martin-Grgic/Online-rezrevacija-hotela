@@ -15,11 +15,12 @@ namespace Online_rezervacija_hotela_MAIN
 {
     public partial class RezervacijaForm : Form
     {
+        PodatkovniKontekst Kontekst;
 
-   
         public RezervacijaForm()
         {
             InitializeComponent();
+            this.Kontekst = new PodatkovniKontekst();
         }
       
 
@@ -50,6 +51,21 @@ namespace Online_rezervacija_hotela_MAIN
         private void IzlazButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void RezervacijaForm_Load(object sender, EventArgs e)
+        {
+            List<Rezervacija> rezervacija = this.Kontekst.UcitajRezervaciju();
+            foreach(Rezervacija r in rezervacija)
+                ListBoxRezervacija.Items.Add(r);
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            ListBoxRezervacija.Items.Clear();
+            List<Rezervacija> rezervacija = this.Kontekst.UcitajRezervaciju();
+            foreach (Rezervacija r in rezervacija)
+                ListBoxRezervacija.Items.Add(r);
         }
     }
 }

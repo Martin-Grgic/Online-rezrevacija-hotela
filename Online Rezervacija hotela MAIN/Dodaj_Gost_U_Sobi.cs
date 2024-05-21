@@ -8,10 +8,9 @@ namespace Online_Rezervacija_hotela_MAIN.Forme
     {
         PodatkovniKontekst Kontekst;
         GostUSobi gost;
-        Soba soba;
+       
         public Dodaj_Gost_U_Sobi()
         {
-            InitializeComponent();
             InitializeComponent();
             this.Kontekst = new PodatkovniKontekst();
         }
@@ -23,22 +22,38 @@ namespace Online_Rezervacija_hotela_MAIN.Forme
             gost.ImeGosta = ImeTB.Text;
             gost.PrezimeGosta = PrezimeTB.Text;
             gost.OIBGosta = OIBTB.Text;
-            gost.Soba = listBox1.SelectedIndex.
+            gost.Soba = this.Kontekst.UcitajSobu()[SobaLB.SelectedIndex];
+
+            this.Kontekst.SpremiGostUSobi(gost);
+            Close();
             
         }
 
         private void Dodaj_Gost_U_Sobi_Load(object sender, System.EventArgs e)
         {
-            List<Soba> soba = this.Kontekst.UcitajSobu();
-
-            foreach (Soba s in soba)
-                listBox1.Items.Add(s);
+            refreshGost();
                 
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, System.EventArgs e)
+
+        private void refreshGost()
         {
+            List<Soba> soba = this.Kontekst.UcitajSobu();
+
+            foreach (Soba s in soba)
+            {
+                SobaLB.Items.Add(s);
+                
+
+            }
 
         }
+
+        private void refreshButton_Click(object sender, System.EventArgs e)
+        {
+            refreshGost();
+        }
+
+        
     }
 }

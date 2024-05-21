@@ -23,8 +23,23 @@ namespace Online_rezervacija_hotela_MAIN {
         private void DodajRezervacija_Click(object sender, EventArgs e)
         {
             this.rezervacija = new Rezervacija();
+            rezervacija.Gost = this.kontekst.UcitajGostUSobi()[listBox1.SelectedIndex];
+            rezervacija.CheckIn = DateTime.Parse(checkIn.Text); 
+            rezervacija.CheckOut = DateTime.Parse(checkOut.Text);
+            rezervacija.BrojGostiju = int.Parse(BrojGostijuTB.Text);
+            rezervacija.BrojRezervacije = int.Parse(BrojRezervacijeTB.Text);
 
+            this.kontekst.SpremiRezervaciju(rezervacija);
 
+            Close();
+
+        }
+
+        private void Dodaj_Rezervacija_Load(object sender, EventArgs e)
+        {
+            List<GostUSobi> gost = this.kontekst.UcitajGostUSobi();
+            foreach (GostUSobi g in gost )
+                listBox1.Items.Add( g );
         }
     }
 }

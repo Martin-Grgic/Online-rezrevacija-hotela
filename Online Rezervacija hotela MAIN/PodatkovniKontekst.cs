@@ -106,7 +106,9 @@ namespace Online_Rezervacija_hotela_MAIN
                             g.PrezimeGosta = polja[1];
                             g.OIBGosta = polja[2];
 
-                        g.Soba = new Soba(int.Parse(polja[3]), polja[4], double.Parse(polja[5]), double.Parse(polja[6]));
+                        string[] polja2 = polja[3].Split(',');  
+
+                        g.Soba = new Soba(int.Parse(polja2[0]), polja2[1], double.Parse(polja2[2]), double.Parse(polja2[3]));
                        
 
                         
@@ -127,14 +129,14 @@ namespace Online_Rezervacija_hotela_MAIN
 
             foreach (var gost in this.gostUSobi)
             {
-                sw.WriteLine($"{gost.ImeGosta}|{gost.PrezimeGosta}|{gost.OIBGosta}|{gost.Soba}");
+                sw.WriteLine($"{gost.ImeGosta}|{gost.PrezimeGosta}|{gost.OIBGosta}|{gost.Soba.BrojSobe},{gost.Soba.TipSobe},{gost.Soba.CijenaNoci},{gost.Soba.VelicinaSobe}");
             }
 
         }
     }
         public List<Rezervacija> UcitajRezervaciju()
         {
-            List<Rezervacija> gost = new List<Rezervacija>();
+            List<Rezervacija> rezervacija = new List<Rezervacija>();
 
 
             if (File.Exists(datRezervacija))
@@ -153,11 +155,13 @@ namespace Online_Rezervacija_hotela_MAIN
                                     r.Gost.ImeGosta = polja[0];
                                     r.Gost.PrezimeGosta = polja[1];
                                     r.Gost.OIBGosta = polja[2];
-                                    r.Gost.Soba = new Soba(int.Parse(polja[3]), polja[4], double.Parse(polja[5]), double.Parse(polja[6]));
-                            r.CheckIn = DateTime.Parse(polja[7]);
-                            r.CheckOut = DateTime.Parse(polja[8]);
-                            r.BrojGostiju = int.Parse(polja[9]);
-                            r.BrojRezervacije = int.Parse(polja[10]);
+                                    string[] polja2 = polja[3].Split(',');
+                                    r.Gost.Soba = new Soba(int.Parse(polja2[0]), polja2[1], double.Parse(polja2[2]), double.Parse(polja2[3]));
+                        string[] polja3 = polja2[4].Split('-');
+                            r.CheckIn = DateTime.Parse(polja3[0]);
+                            r.CheckOut = DateTime.Parse(polja3[1]);
+                            r.BrojGostiju = int.Parse(polja3[2]);
+                            r.BrojRezervacije = int.Parse(polja3[3]);
 
 
                         rezervacija.Add(r);
@@ -170,13 +174,13 @@ namespace Online_Rezervacija_hotela_MAIN
         }
         public void SpremiRezervaciju(Rezervacija r)
         {
-            this.rezervacija.Add(r);
-            using (StreamWriter sw = new StreamWriter(datGostUSobi))
+            rezervacija.Add(r);
+            using (StreamWriter sw = new StreamWriter(datRezervacija))
             {
 
                 foreach (var rezervacija in this.rezervacija)
                 {
-                    sw.WriteLine($"{rezervacija.Gost.ImeGosta}|{rezervacija.CheckIn}|{rezervacija.CheckOut}|{rezervacija.BrojGostiju}|{rezervacija.BrojRezervacije}|{rezervacija.Gost.Soba.BrojSobe}");
+                    sw.WriteLine($"{rezervacija.Gost.ImeGosta}|{rezervacija.Gost.PrezimeGosta}|{rezervacija.Gost.OIBGosta}|{rezervacija.Gost.Soba.BrojSobe},{rezervacija.Gost.Soba.TipSobe},{rezervacija.Gost.Soba.CijenaNoci},{rezervacija.Gost.Soba.VelicinaSobe},{rezervacija.CheckIn}-{rezervacija.CheckOut}-{rezervacija.BrojGostiju}-{rezervacija.BrojRezervacije}");
                 }
 
             }

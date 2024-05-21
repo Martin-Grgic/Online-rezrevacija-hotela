@@ -32,6 +32,7 @@
             this.DodajButton = new System.Windows.Forms.Button();
             this.UrediButton = new System.Windows.Forms.Button();
             this.ObrisiButton = new System.Windows.Forms.Button();
+            this.refreshButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ListBoxGostUSobi
@@ -71,17 +72,31 @@
             this.ObrisiButton.Text = "Obrisi";
             this.ObrisiButton.UseVisualStyleBackColor = true;
             // 
-            // GostUSobi
+            // refreshButton
+            // 
+            this.refreshButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshButton.Location = new System.Drawing.Point(670, 60);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(56, 47);
+            this.refreshButton.TabIndex = 5;
+            this.refreshButton.Text = "⟳";
+            this.refreshButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            // 
+            // GostUSobiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.ObrisiButton);
             this.Controls.Add(this.UrediButton);
             this.Controls.Add(this.DodajButton);
             this.Controls.Add(this.ListBoxGostUSobi);
-            this.Name = "GostUSobi";
+            this.Name = "GostUSobiForm";
             this.Text = "GostUSobi";
+            this.Load += new System.EventHandler(this.GostUSobiForm_Load);
             this.ResumeLayout(false);
 
         }
@@ -92,5 +107,6 @@
         private System.Windows.Forms.Button DodajButton;
         private System.Windows.Forms.Button UrediButton;
         private System.Windows.Forms.Button ObrisiButton;
+        private System.Windows.Forms.Button refreshButton;
     }
 }
